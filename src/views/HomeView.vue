@@ -1,9 +1,5 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
+<script setup></script>
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <p class="text-red-500">hello my name is mohammadreza gholamipour</p>
 </template>
+<style scoped></style>
