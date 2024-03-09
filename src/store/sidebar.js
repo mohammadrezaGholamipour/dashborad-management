@@ -3,7 +3,8 @@ import { computed, reactive } from 'vue'
 // /////////////////////////////////
 export const sidebar = defineStore('pinia', () => {
   const state = reactive({
-    sideBarStatus: false
+    sideBarStatus: false,
+    appWidth: 0
   })
   const appWidth = computed(() => {
     const observer = new ResizeObserver((entries) => {

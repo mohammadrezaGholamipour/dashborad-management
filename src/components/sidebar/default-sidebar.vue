@@ -33,10 +33,17 @@ console.log(test())
       <img class="animate-pulse" src="@/assets/images/logo/logo.png" />
     </div>
   </div>
+  <XyzTransition xyz="fade">
+    <div
+      v-if="sidebarPinia.state.sideBarStatus && sidebarPinia.state.appWidth < 800"
+      @click="sidebarPinia.changeSideBarStatus()"
+      class="sideBar-bg-mobile"
+    ></div>
+  </XyzTransition>
 </template>
 <style scoped>
 .parent-sidebar {
-  @apply h-full w-0 transition-all duration-500 border-x border-[#E6EFF5];
+  @apply h-full bg-white z-[990] w-0 transition-all duration-500 border-x border-[#E6EFF5];
 }
 .sidebar-width {
   width: clamp(250px, 100%, 250px) !important;
@@ -46,7 +53,10 @@ console.log(test())
   height: clamp(100px, 100%, 100px);
 }
 .logo img {
-  mix-blend-mode: difference;
+  mix-blend-mode: difference !important;
   height: 100px;
+}
+.sideBar-bg-mobile {
+  @apply backdrop-blur-md absolute w-screen h-dvh;
 }
 </style>
