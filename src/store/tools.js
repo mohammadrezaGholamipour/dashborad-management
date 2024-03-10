@@ -1,17 +1,13 @@
-import { computed, reactive } from 'vue'
 import { defineStore } from 'pinia'
+import { reactive } from 'vue'
 // /////////////////////////////////
 export const tools = defineStore('pinia', () => {
   const state = reactive({
+    sideBarStatus: false,
     appWidth: 0
   })
 
-  const observer = new ResizeObserver((entries) => {
-    const { width } = entries[0].contentRect
-    state.appWidth = width
-  })
-  observer.observe(document.getElementById('app'))
-
-  return { state }
+  const changeSideBarStatus = () => (state.sideBarStatus = !state.sideBarStatus)
+  return { state, changeSideBarStatus }
 })
 /////////////////////////////////

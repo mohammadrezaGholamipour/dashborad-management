@@ -1,10 +1,10 @@
 <script setup>
-import { sidebar } from '@/store/sidebar'
-// ////////////////////////////
-const sidebarPinia = sidebar()
+import { tools } from '@/store/tools'
+///////////////////////////////
+const toolsPinia = tools()
 const observer = new ResizeObserver((entries) => {
   const { width: appWidth } = entries[0].contentRect
-  sidebarPinia.state.appWidth = appWidth
+  toolsPinia.state.appWidth = appWidth
 })
 observer.observe(document.getElementById('app'))
 </script>
