@@ -18,7 +18,7 @@ const sidebarClass = computed(() => {
 })
 
 const isMobileSidebarVisible = computed(() => {
-  return toolsPinia.state.sideBarStatus && toolsPinia.state.appWidth < 500
+  return toolsPinia.state.sideBarStatus && toolsPinia.state.appWidth < 700
 })
 </script>
 <template>
