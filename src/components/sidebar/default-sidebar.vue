@@ -6,7 +6,7 @@ const toolsPinia = tools()
 
 const sidebarClass = computed(() => {
   const classList = ['parent-sidebar']
-  if (toolsPinia.state.appWidth < 500) {
+  if (toolsPinia.state.appWidth < 700) {
     classList.push('absolute')
     if (toolsPinia.state.sideBarStatus) {
       classList.push('sidebar-width')
