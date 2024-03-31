@@ -8,15 +8,18 @@ const toolsPinia = tools()
 const touchStartX = ref(0)
 const minSwipeDistance = 50
 ///////////////////////////
-const onTouchStart = () => {
+const onTouchStart = (event) => {
   touchStartX.value = event.touches[0].clientX
 }
 
-const onTouchMove = () => {
+const onTouchMove = (event) => {
   const touchCurrentX = event.touches[0].clientX
   const swipeDistance = touchCurrentX - touchStartX.value
   if (swipeDistance > minSwipeDistance && !toolsPinia.state.sideBarStatus) {
     toolsPinia.changeSideBarStatus(true)
+  }
+  if (swipeDistance < -minSwipeDistance && toolsPinia.state.sideBarStatus) {
+    toolsPinia.changeSideBarStatus(false)
   }
 }
 
