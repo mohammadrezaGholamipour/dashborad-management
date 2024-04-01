@@ -1,5 +1,5 @@
 <script setup>
-import DefaultSidebar from '@/components/sidebar/default-sidebar.vue'
+import ParentSidebar from '@/components/sidebar/parent-sidebar.vue'
 import DefaultHeader from '@/components/header/default-header.vue'
 import { tools } from '@/store/tools'
 import { ref } from 'vue'
@@ -34,7 +34,7 @@ const onTouchEnd = () => {
     @touchend.passive="onTouchEnd"
     class="parent-layout"
   >
-    <DefaultSidebar />
+    <ParentSidebar />
     <div class="header-and-header">
       <DefaultHeader />
       <RouterView class="main" />
